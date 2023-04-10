@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sports</title>
+	<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "registration";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$firstName = $_POST['fname'];
+$lastName = $_POST['lname'];
+$email = $_POST['Email'];
+$phone = $_POST['telNo'];
+$birthdate = $_POST['birthdate'];
+$sport = $_POST['choose'];
+
+$sql = "INSERT INTO registration (firstName, lastName, email, phone, birthdate, sport)
+VALUES ('$firstName', '$lastName', '$email', '$phone', '$birthdate', '$sport')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+
+<script>
+    document.querySelector("form").onsubmit = function(event){
+        event.preventDefault();
+        var isValid = true;
+
+        var firstName = document.querySelector("#fname").value;
+        if(firstName.trim() === ""){
+            alert("Please enter your first name.");
+            isValid = false;
+        }
+
+        var lastName = document.querySelector("#lname").value;
+        if(lastName.trim() === ""){
+            alert("Please enter your last name.");
+            isValid = false;
+        }
+
+        var email = document.querySelector("#Email").value;
+        if(email.trim() === ""){
+            alert("Please enter your email.");
+            isValid = false;
+        }
+		var phone = document.querySelector("#telNo").value;
+        if(phone.trim() === ""){
+            alert("Please enter your phone number.");
+            isValid = false;
+        }
+
+        var birthdate = document.querySelector("#birthdate").value;
+        if(birthdate.trim() === ""){
+            alert("Please enter your birthdate.");
+            isValid = false;
+        }
+
+        var sport = document.querySelectorAll(".form-check-input");
+        var selected = false;
+        for(var i=0; i<sport.length; i++){
+            if(sport[i].checked){
+                selected = true;
+                break;
+            }
+        }
+        if(!selected){
+            alert("Please select a sport.");
+            isValid = false;
+        }
+
+        if(isValid){
+            this.submit();
+        }
+    }
+</script>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+ >
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="text-center text-primary">Let's register in the club!</h2>
+      <form action="handle_registration.php" method="post" class="form-group">
+        <fieldset>
+          <legend>Registration Information</legend>
+          <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="telNo">Phone Number:</label>
+            <input id="telNo" name="telNo" type="tel" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Date of birth:</label>
+            <input type="date" id="birthdate" name="birth-date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Choose Sport:</label>
+            <div class="form-check">
+              <input type="radio" name="choose" class="form-check-input" />
+              <label class="form-check-label">Football</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="choose" class="form-check-input" />
+              <label class="form-check-label">Chess</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="choose" class="form-check-input" />
+              <label class="form-check-label">Aerobics</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="choose" class="form-check-input" />
+              <label class="form-check-label">Tennis</label>
+            </div>
+          </div>
+		  <a style ="text-align :right ;" class="text-info" href="tel:515-456-7890">For your inquiries</a>
+		  <br>
+          <div class="form-group text-center">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="reset" value="Reset" class="btn btn-secondary" />
+          </div>
+        </fieldset>
+		
+      </form>
+    </div>
+  </body>
+</html>

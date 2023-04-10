@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sport Club Shop</title>
+    <link rel="stylesheet" href="/CSS/shopStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <!-- To give the 3 lines in the button that is in the right of the page -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="HomePage.html">Brave Athletes Club</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/HTML/HomePage.html">Home</a></li>
+            <li><a href="/HTML/shop.html">Shop</a></li>
+            <li><a href="/HTML/information.html">Information</a></li>
+            <li><a href="/HTML/Become-a-member.html">Become a Member</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="SignUp.html">
+                <!-- This is a name of icon ↓ -->
+                <span class="glyphicon glyphicon-user"></span> Sign Up
+              </a>
+            </li>
+            <li>
+              <a href="SignIn.html">
+                <!-- This is a name of icon ↓ -->
+                <span class="glyphicon glyphicon-log-in"></span> Login
+              </a>
+            </li>
+          </ul>
+          <!-- End of the unordered list -->
+        </div>
+        <!-- End of the collapsed navigation bar -->
+      </div>
+      <!-- End of the container fluid -->
+    </nav>
+
+    <div class="header">
+      <h1>The Shop</h1>
+    </div>
+
+    <div class="logo">
+      <img src="/assets/shop2.jpg" alt="real" width="100%" height="150px" />
+    </div>
+
+    <div id="merchandise">
+      <button id="checkout" onclick="checkout()">Checkout</button>
+
+      <div class="merchant">
+        <img src="/assets/shirt.jpg" alt="Merchant 1" />
+        <h2>Men white shirt</h2>
+        <p>$50</p>
+        <button onclick="addToBag({id: 1, name: 'Product 1', price: 50})">
+          Add to bag
+        </button>
+      </div>
+
+      <div class="merchant">
+        <img src="/assets/shirtt.jpg" alt="Merchant 2" />
+        <h2>Men lime shirt</h2>
+        <p>$50</p>
+        <button onclick="addToBag({id: 2, name: 'Product 2', price: 50})">
+          Add to bag
+        </button>
+      </div>
+
+      <div class="merchant">
+        <img src="/assets/short.jpg" alt="Merchant 3" />
+        <h2>Men white short</h2>
+        <p>$55</p>
+        <button onclick="addToBag({id: 3, name: 'Product 3', price: 55})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img
+          src="/assets/short2.jpg"
+          alt="Merchant 4"
+          width="300"
+          height="200"
+        />
+        <h2>Men black shirt</h2>
+        <p>$40</p>
+        <button onclick="addToBag({id: 4, name: 'Product 4', price: 40})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img src="/assets/bottle.png" alt="Merchant 5" />
+        <h2>Red water bottle</h2>
+        <p>$25</p>
+        <button onclick="addToBag({id: 5, name: 'Product 5', price: 25})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img src="/assets/bottle2.jpg" alt="Merchant 6" />
+        <h2>Blue water bottle</h2>
+        <p>$25</p>
+        <button onclick="addToBag({id: 6, name: 'Product 6', price: 25})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img src="/assets/shirt3.jpg" alt="Merchant 7" />
+        <h2>women pink shirt</h2>
+        <p>$30</p>
+        <button onclick="addToBag({id: 7, name: 'Product 7', price: 30})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img src="/assets/shirt4.jpg" alt="Merchant 8" />
+        <h2>Women purple jacket</h2>
+        <p>$45</p>
+        <button onclick="addToBag({id: 8, name: 'Product 8', price: 45})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img
+          src="/assets/pants.jfif"
+          alt="Merchant 9"
+          width="200"
+          height="200"
+        />
+        <h2>Women black leggings</h2>
+        <p>$35</p>
+        <button onclick="addToBag({id: 9, name: 'Product 9', price: 35})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img src="/assets/pants2.jfif" alt="Merchant 10" />
+        <h2>Women grey sweatpants</h2>
+        <p>$30</p>
+        <button onclick="addToBag({id: 10, name: 'Product 10', price: 30})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img
+          src="/assets/tennis.jpg"
+          alt="Merchant 11"
+          width="200"
+          height="200"
+        />
+        <h2>Tennis Racket</h2>
+        <p>$20</p>
+        <button onclick="addToBag({id: 11, name: 'Product 11', price: 20})">
+          Add to bag
+        </button>
+      </div>
+      <div class="merchant">
+        <img
+          src="/assets/gloves.jpg"
+          alt="Merchant 12"
+          width="200"
+          height="200"
+        />
+        <h2>Football gloves</h2>
+        <p>$40</p>
+        <<button onclick="addToBag({id: 12, name: 'Product 12', price: 40})">
+          Add to bag
+        </button>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/Js/Shop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+
+body {
+font-family:"Times New Roman", Times, serif;
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 22%, rgba(0,212,255,1) 100%);
+}
+
+h1 {
+  text-align: center;
+  color:white;
+  padding: 30px;
+  font-family:"Times New Roman", Times, serif;
+  border-top: solid white 5px;
+  border-bottom: solid white 5px;
+}
+
+#merchandise {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.merchant {
+  width: 20%;
+  border: 2px solid black;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: white;
+}
+
+.merchant img {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.merchant h2 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.merchant p {
+  font-size: 14px;
+  color: red;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #38598b;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+button:hover {
+	background-color: #a2a8d3;
+	}
+button:active {
+  background-color: #a2a8d3;
+  box-shadow: 0 5px #666;
+ 
+}
+
+#checkout {
+  width: 100%;
+  margin-top: 20px;
+  position: fixed;
+  bottom:0px;
+  
+}

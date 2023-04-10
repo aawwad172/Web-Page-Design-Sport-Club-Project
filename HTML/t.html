@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sport Club Shop</title>
+    <link rel="stylesheet" href="/CSS/shopStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>The Shop</h1>
+    </div>
+
+    <div class="logo">
+      <img src="/assets/shop2.jpg" alt="real" class="img-responsive" />
+    </div>
+
+    <div id="merchandise">
+      <button id="checkout" onclick="checkout()">Checkout</button>
+      <div class="row">
+        <div class="merchant col-xs-6 col-sm-4 col-md-3">
+          <img
+            src="/assets/shirt.jpg"
+            alt="Merchant 1"
+            class="img-responsive"
+          />
+          <h2>Men white shirt</h2>
+          <p>$50</p>
+          <button onclick="addToBag({id: 1, name: 'Product 1', price: 50})">
+            Add to bag
+          </button>
+        </div>
+
+        <div class="merchant col-xs-6 col-sm-4 col-md-3">
+          <img
+            src="/assets/shirtt.jpg"
+            alt="Merchant 2"
+            class="img-responsive"
+          />
+          <h2>Men lime shirt</h2>
+          <p>$50</p>
+          <button onclick="addToBag({id: 2, name: 'Product 2', price: 50})">
+            Add to bag
+          </button>
+        </div>
+
+        <div class="merchant col-xs-6 col-sm-4 col-md-3">
+          <img
+            src="/assets/short.jpg"
+            alt="Merchant 3"
+            class="img-responsive"
+          />
+          <h2>Men white short</h2>
+          <p>$55</p>
+          <button onclick="addToBag()">Add to bag</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
